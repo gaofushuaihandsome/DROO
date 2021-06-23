@@ -57,6 +57,13 @@ def plot_rate(rate_his, rolling_intv=50):
 
 def save_to_txt(rate_his, file_path):
     with open(file_path, 'w') as f:
+        for ii in range(len(rate_his)):
+            for jj in range(len(rate_his[ii])):
+                f.write("%s " % rate_his[ii][jj])
+            f.write('\n')
+
+def save_to_txt1(rate_his, file_path):
+    with open(file_path, 'w') as f:
         for rate in rate_his:
             f.write("%s \n" % rate)
 
@@ -159,8 +166,8 @@ if __name__ == "__main__":
     print('Average time per channel:%s'%(total_time/n))
 
     # save data into txt
-    save_to_txt(k_idx_his, "k_idx_his.txt")
-    save_to_txt(K_his, "K_his.txt")
-    save_to_txt(mem.cost_his, "cost_his.txt")
-    save_to_txt(rate_his_ratio, "rate_his_ratio.txt")
+    # save_to_txt(k_idx_his, "k_idx_his.txt")
+    # save_to_txt(K_his, "K_his.txt")
+    # save_to_txt(mem.cost_his, "cost_his.txt")
+    # save_to_txt(rate_his_ratio, "rate_his_ratio.txt")
     save_to_txt(mode_his, "mode_his.txt")
