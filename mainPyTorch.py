@@ -130,6 +130,7 @@ if __name__ == "__main__":
             # test
             i_idx = i - n + num_test + split_idx
 
+
         h = channel[i_idx,:]
 
         # the action selection must be either 'OP' or 'KNN'
